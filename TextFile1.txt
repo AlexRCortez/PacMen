@@ -1,0 +1,28 @@
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+
+
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+
+Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=PacMen.DB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -Context PacMenEntities -UseDatabaseNames -force
+
+Add-Migration CreateDatabase
+Update-Database
+
+
+migrationBuilder.Sql(@"CREATE PROCEDURE [dbo].[spGetScores]
+                AS
+	                select s.Id, s.Score, s.Date, s.Level
+                    from tblScore s
+                RETURN 0");
+
+            migrationBuilder.Sql(@"CREATE PROCEDURE [dbo].[spGetUsers]
+                AS
+	                select u.Id, u.FirstName, u.LastName, u.Email, u.UserName, u.Image, u.Password,
+                    u.ScoreId
+                    from tblUser u
+                    inner join tblScore s on u.ScoreId = s.Id
+                RETURN 0");
+        }

@@ -1,0 +1,162 @@
+@import url('site.css');
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: black;
+}
+
+
+.bg-dark {
+    background: linear-gradient(90deg, rgba(253,255,0,1) 0%, rgba(70,191,238,1) 40%, rgba(208,62,25,1) 100%);
+}
+
+.Score {
+    margin-left: 350px;
+    margin-right: auto;
+    color: white;
+    font: sans-serif;
+    font-size: 30px;
+    text-align: center;
+
+}
+.bContainer {
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    /*border: 1px solid white;*/
+}
+
+.signalR {
+    font-family: "Lucida Console", "Courier New", monospace;
+    float: right;
+    margin: 0 auto;
+   /* text-align: center;*/
+    width: 400px;
+    height: fit-content;
+    padding: 4px;
+    background-color: darkblue;
+}
+.leaderboardIndex {
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 500px;
+   border: 2px solid white;
+}
+.cContainer {
+    margin-left: auto;
+    margin-right: auto;
+   align-items: center;
+   justify-content: center;
+}
+
+.Homecontainer {
+    font-family: "Montserrat", sans-serif;
+    /*width: 100%;*/
+    /*height: 100vh;*/
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Homecontainer {
+    text-align: center;
+}
+
+    .Homecontainer h1 {
+        font-size: 95px;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+
+    .Homecontainer p {
+        margin-top: 50px;
+        font-size: 20px;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+
+    .Homecontainer a {
+        background-color: darkblue;
+        font-size: 23px;
+        color: #fff;
+        text-decoration: none;
+        border: 2px solid #000;
+        padding: 15px 25px;
+        border-radius: 80px;
+        transition: 0.3s;
+    }
+
+.HContent a:hover {
+    background-color: yellow;
+    color: darkblue;
+}
+
+.homeimage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+/* Chat feature*/
+/*.containerc {
+    float: right;
+}
+.message-candidate {
+    background: rgba(223, 229, 121, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+.message-hiring-manager {
+    background: rgba(0, 167, 204, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+.messaging {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.message-text {
+    margin-top: 10px;
+}
+
+.message-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    display: inline-block;
+}
+
+.message-name {
+    margin-left: 10px;
+    display: inline-block;
+}*/

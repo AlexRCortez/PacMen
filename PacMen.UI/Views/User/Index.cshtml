@@ -1,0 +1,132 @@
+﻿@model IEnumerable<PacMen.BL.Models.User>
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+ 
+<div class="signalR m-2 text-white">
+    <h1 class="signalRH1  text-center text-white">Chat</h1>
+
+    <div class="row p-1">
+        <div class="col-1 m-2 text-white"> <p> User</p> </div>
+        <div class="messageIndex"> <input type="text" id="userInput" /></div>
+    </div>
+
+    <div class="row p-1">
+        <div class="col-1 m-2 text-white"> <p>Message </p></div>
+        <div class="messageIndex"> <input type="text" id="messageInput" />
+    </div>
+    </div>
+
+    <div class="row m-2 p-1">
+        <div class="col-6 text-white text-end"> </div>
+        <div class="text-white"><input type="button" id="sendButton" value="Send Message" /></div>
+    </div>
+
+   
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1 text-white">
+        <div class="col-6">
+            <ul id="messages"></ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+  <div>
+         <iframe height="200" width="300" src="https://lorjay0494.itch.io/pacmen"> </iframe>
+       <li class="nav-item text-light"> <a class="" href="https://lorjay0494.itch.io/pacmen">Click Here to play this version</a> </li>
+        <li class="nav-item text-light"> <a class="text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+     </div>
+
+<p class="Score">
+<span> Score: </span><span id="scores"> 0</span> 
+<span> Level: </span><span id="LevelEL"> 1</span>
+</p>
+
+
+<div class="cContainer"> 
+    <div class="relative">
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div id="startScreen" class="bg-black/75 p-4 border-4 border-yellow-400 rounded text-center max-w-xs ">
+                <h1 class="text-white text-3xl mb-2">PacMan</h1>
+                <button id="startButton"
+                        class="text-black text-sm bg-yellow-400 px-4 py-2 rounded-full hover:bg-yellow-300">
+                    Start Game
+                </button>
+            </div>
+            <input type="hidden" id="edit-id"> </input>
+                <input type="hidden" id="edit-date"></input>
+       <!-- game over screen -->
+            <div id="gameOverScreen" class="bg-black/75 p-4 border-4 border-yellow-400 rounded text-center max-w-xs w-full hidden">
+
+                <p class="text-white text-xs mb-2">Game Over</p>
+                <h1  id="gameOverScoreLabel" class="text-white text-3xl">Score</h1>
+                <p class="text-white text-[10px] mb-2">Score</p>
+                <h1  id="gameOverScoreLabel2" class="text-white text-3xl">Level</h1>
+                <p class="text-white text-[10px] mb-2">Level</p>
+                <buttorn id="restartGameButton"
+                        class="text-black text-xs bg-yellow-400 px-4 py-2 rounded-full hover:bg-yellow-300">
+                    Restart Game
+                </button>
+            </div>
+      <!-- ready tag -->
+            <div id="readyTag" class="bg-black/75 p-4 border-4 border-yellow-400 rounded text-center max-w-xs w-full hidden">
+                <h1 class="text-white text-xl">Ready?</h1>
+            </div>
+  <!-- go tag -->
+            <div id="goTag" class="bg-black/75 p-4 border-4 border-yellow-400 rounded text-center max-w-xs w-full hidden">
+                <h1 class="text-white text-xl">Go!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bContainer">
+<canvas class="board" ></canvas>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<
+
+
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js" defer> </script>
+<script src="~/js/SignalRIndex.js" defer> </script>
+<script src="~/js/utils.js" defer> </script>
+<script src="~/js/classes/Boundary.js" defer> </script>
+<script src="~/js/classes/Ghost.js" defer> </script>
+<script src="~/js/classes/Pellet.js" defer> </script>
+<script src="~/js/classes/Player.js" defer> </script>
+<script src="~/js/classes/PowerUp.js" defer> </script>
+<script src="~/js/classes/Item.js" defer> </script>
+<script src="~/js/eventListners.js" defer> </script>
+<script src="~/js/setUp.js" defer> </script>
+<script src="~/js/index.js" defer> </script>
+<script src="~/js/APIHandler.js" defer> </script>
+<script src="~/js/site.js" defer> </script>
